@@ -6,205 +6,142 @@
   <title>OMNITEAM - Nosso Time</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* Reset básico */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #0b1c2c 0%, #122c45 100%);
+      margin: 0;
+      padding: 0;
+      background-color: #0b1c2c;
       color: #e0e0e0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       text-align: center;
-      padding: 20px;
     }
 
     header {
-      padding: 30px 0 15px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
+      background-color: #0b1c2c;
+      padding: 30px 0 10px;
     }
 
     header img {
-      max-width: 130px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px #4a90e2aa;
-      transition: transform 0.3s ease;
-    }
-    header img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px #ffd700cc;
+      max-width: 120px;
+      margin-bottom: 10px;
     }
 
     h1 {
-      font-weight: 800;
-      font-size: 3rem;
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin: 10px 0 0;
       color: #ffffff;
-      letter-spacing: 2px;
-      text-shadow: 1px 1px 5px #0008;
-    }
-
-    p.slogan {
-      font-size: 1.1rem;
-      color: #cfcfcfcc;
-      font-weight: 600;
-      font-style: italic;
-      letter-spacing: 0.1em;
-      user-select: none;
     }
 
     nav {
-      background-color: #18304f;
-      border-radius: 30px;
-      box-shadow: 0 4px 12px #0008;
-      margin: 25px 0 40px;
-      padding: 12px 40px;
+      background-color: #122c45;
       display: flex;
-      gap: 30px;
       justify-content: center;
-      font-weight: 600;
-      font-size: 1.15rem;
-      user-select: none;
+      padding: 12px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
     }
 
     nav a {
-      color: #d6d6d6;
+      color: #fff;
       text-decoration: none;
-      padding: 8px 18px;
-      border-radius: 25px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      box-shadow: inset 0 0 0 0 #ffd700;
+      margin: 0 20px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      padding-bottom: 4px;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease;
     }
 
-    nav a.active, nav a:hover {
-      color: #0b1c2c;
-      background-color: #ffd700;
-      box-shadow: inset 0 0 8px 4px #ffd700aa;
+    nav a:hover, nav a.active {
+      color: #ffd700;
+      border-bottom-color: #ffd700;
     }
 
     #destaque {
-      margin-bottom: 40px;
-      max-width: 600px;
+      padding: 40px 20px 20px;
+      background: linear-gradient(to bottom, #0b1c2c 0%, #122c45 100%);
     }
 
     #destaque h2 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      text-shadow: 1px 1px 7px #000a;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.4em;
     }
 
     #destaque p {
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: #d0d0d0cc;
-      letter-spacing: 0.05em;
+      color: #ccc;
+      font-size: 1.15rem;
+      margin: 0;
     }
 
     .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
       max-width: 1100px;
-      width: 100%;
-      padding-bottom: 60px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+
+    a.card-link {
+      text-decoration: none;
+      color: inherit;
     }
 
     .card {
-      background: #182c3aee;
-      border-radius: 18px;
-      box-shadow:
-        0 8px 12px rgba(0,0,0,0.25),
-        inset 0 0 0 2px #4a90e2;
-      padding: 30px 20px 40px;
-      transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
-      cursor: default;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      user-select: none;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 0.6s forwards;
+      background-color: #182c3a;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      width: 280px;
+      padding: 25px 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    /* Delay para animação em cascata */
-    .card:nth-child(1) { animation-delay: 0.15s; }
-    .card:nth-child(2) { animation-delay: 0.3s; }
-    .card:nth-child(3) { animation-delay: 0.45s; }
-    .card:nth-child(4) { animation-delay: 0.6s; }
-    .card:nth-child(5) { animation-delay: 0.75s; }
 
     .card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow:
-        0 20px 40px rgba(255, 215, 0, 0.6),
-        inset 0 0 10px 3px #ffd700cc;
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     }
 
     .card img {
-      width: 120px;
-      height: 120px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 18px;
-      border: 4px solid #4a90e2;
-      box-shadow: 0 0 20px #4a90e2cc;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover img {
-      border-color: #ffd700;
-      box-shadow: 0 0 25px #ffd700cc;
+      margin-bottom: 15px;
+      border: 3px solid #4A90E2;
     }
 
     .card h2 {
       font-weight: 700;
-      font-size: 1.6rem;
-      color: #fff;
-      margin-bottom: 8px;
-      text-shadow: 0 1px 3px #0009;
+      font-size: 1.4rem;
+      color: #ffffff;
+      margin: 10px 0 5px;
     }
 
     .card p {
-      font-size: 1.1rem;
-      color: #ccc;
-      margin: 5px 0;
-      line-height: 1.4;
-      user-select: text;
+      color: #bbb;
+      font-size: 1rem;
+      margin: 4px 0;
     }
 
     footer {
-      width: 100%;
-      text-align: center;
+      background-color: #0b1c2c;
+      color: #aaa;
       padding: 20px 0;
-      color: #999;
       font-size: 0.9rem;
-      user-select: none;
-      border-top: 1px solid #23344a;
     }
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Responsividade */
-    @media (max-width: 650px) {
-      nav {
+    @media (max-width: 850px) {
+      .row {
         flex-direction: column;
-        gap: 15px;
-        padding: 20px;
+        align-items: center;
       }
     }
   </style>
@@ -214,7 +151,7 @@
   <header>
     <img src="logo.jpg" alt="Logo da OMNITEAM" />
     <h1>OMNITEAM</h1>
-    <p class="slogan">SEU TIME DE ALTA PERFORMANCE</p>
+    <p style="color:#ccc; font-size: 1rem; margin-top: 5px;">SEU TIME DE ALTA PERFORMANCE</p>
   </header>
 
   <nav>
@@ -227,38 +164,58 @@
     <p>Conheça quem está por trás do sucesso 💼</p>
   </section>
 
-  <main class="container">
-    <article class="card">
-      <img src="bruno.jpg" alt="Foto do Bruno" />
-      <h2>Bruno Sanches</h2>
-      <p>Planejador de Demanda</p>
-      <p>Amante de séries e planilhas 📊</p>
-    </article>
-    <article class="card">
-      <img src="lorena.jpg" alt="Foto da Lorena" />
-      <h2>Lorena de Sousa</h2>
-      <p>Analista de Marketing</p>
-      <p>Fã de design e café ☕️</p>
-    </article>
-    <article class="card">
-      <img src="ana.jpg" alt="Foto da Ana Bernacci" />
-      <h2>Ana Bernacci</h2>
-      <p>Desenvolvedora Front-end</p>
-      <p>Geek e gamer 🎮</p>
-    </article>
-    <article class="card">
-      <img src="andre.jpg" alt="Foto do André" />
-      <h2>André Tavares</h2>
-      <p>Gerente de Projetos</p>
-      <p>Organização é tudo ✔️</p>
-    </article>
-    <article class="card">
-      <img src="lucas.jpg" alt="Foto do Lucas" />
-      <h2>Lucas Fracasso</h2>
-      <p>Especialista em UX</p>
-      <p>Viciado em café e inovação ☕💡</p>
-    </article>
-  </main>
+  <div class="container">
+    <!-- Primeira linha -->
+    <div class="row">
+      <a href="bruno.html" class="card-link">
+        <div class="card">
+          <img src="bruno.jpg" alt="Foto do Bruno" />
+          <h2>Bruno Sanches</h2>
+          <p>Planejador de Demanda</p>
+          <p>Amante de séries e planilhas 📊</p>
+        </div>
+      </a>
+
+      <a href="lorena.html" class="card-link">
+        <div class="card">
+          <img src="lorena.jpg" alt="Foto da Lorena" />
+          <h2>Lorena de Sousa</h2>
+          <p>Analista de Marketing</p>
+          <p>Fã de design e café ☕️</p>
+        </div>
+      </a>
+
+      <a href="ana.html" class="card-link">
+        <div class="card">
+          <img src="ana.jpg" alt="Foto da Ana Bernacci" />
+          <h2>Ana Bernacci</h2>
+          <p>Desenvolvedora Front-end</p>
+          <p>Geek e gamer 🎮</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- Segunda linha -->
+    <div class="row">
+      <a href="andre.html" class="card-link">
+        <div class="card">
+          <img src="andre.jpg" alt="Foto do André" />
+          <h2>André Tavares</h2>
+          <p>Gerente de Projetos</p>
+          <p>Organização é tudo ✔️</p>
+        </div>
+      </a>
+
+      <a href="lucas.html" class="card-link">
+        <div class="card">
+          <img src="lucas.jpg" alt="Foto do Lucas" />
+          <h2>Lucas Fracasso</h2>
+          <p>Especialista em UX</p>
+          <p>Viciado em café e inovação ☕💡</p>
+        </div>
+      </a>
+    </div>
+  </div>
 
   <footer>
     &copy; 2025 OMNITEAM. Todos os direitos reservados.
