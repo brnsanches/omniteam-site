@@ -102,7 +102,7 @@
       margin-bottom: 20px;
       letter-spacing: 0.02em;
     }
-    /* Timeline */
+
     .timeline {
       position: relative;
       margin: 40px 0 60px;
@@ -121,15 +121,6 @@
       position: relative;
       margin-bottom: 30px;
       padding-left: 20px;
-      opacity: 0;
-      transform: translateX(-50px);
-      animation: slideInLeft 0.6s forwards;
-    }
-    .event:nth-child(odd) {
-      animation-delay: 0.1s;
-    }
-    .event:nth-child(even) {
-      animation-delay: 0.3s;
     }
     .event::before {
       content: '';
@@ -148,87 +139,50 @@
       color: #ffd700;
       margin-bottom: 5px;
       font-size: 1.1rem;
-      letter-spacing: 0.06em;
-      user-select: none;
     }
-    /* Values Cards */
+
     .values {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-bottom: 60px;
+      margin-bottom: 80px;
     }
     .values h3 {
-      width: 100%;
       font-size: 2.4rem;
-      font-weight: 700;
       color: #ffd700;
       margin-bottom: 30px;
-      text-shadow: 1px 1px 4px #000a;
-      text-align: center;
     }
-    .values .card {
+    .values-lista {
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    .values-lista .card {
       background: #0f223b;
-      padding: 25px 35px;
+      padding: 12px 18px;
       border-radius: 15px;
       box-shadow: 0 8px 20px #000c;
       font-weight: 700;
-      font-size: 1.3rem;
+      font-size: 1rem;
       color: #fff;
-      flex: 1 1 140px;
-      max-width: 180px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: default;
+      flex: 0 0 130px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+      cursor: pointer;
       user-select: none;
+      text-align: center;
     }
-    .values .card:hover {
-      transform: translateY(-8px);
+    .values-lista .card:hover {
+      transform: translateY(-6px);
       box-shadow: 0 15px 30px #ffd700cc;
       color: #ffd700;
     }
-    /* Testimonials */
-    .testimonials {
-      background: #0b1c2cdd;
-      border-radius: 20px;
-      padding: 40px 30px;
-      margin-bottom: 60px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-    .testimonials h3 {
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: #ffd700;
-      margin-bottom: 30px;
-      text-shadow: 1px 1px 4px #000a;
-    }
-    .testimonial {
-      font-style: italic;
+    .value-description {
       font-size: 1.1rem;
-      color: #ddd;
-      margin-bottom: 20px;
-      position: relative;
-      padding-left: 30px;
-      user-select: none;
+      color: #ccc;
+      padding: 0 20px;
+      max-width: 700px;
+      margin: 0 auto;
     }
-    .testimonial::before {
-      content: "“";
-      position: absolute;
-      left: 0;
-      top: -10px;
-      font-size: 3rem;
-      color: #ffd700cc;
-      font-weight: 900;
-      line-height: 1;
-    }
-    .testimonial-author {
-      font-weight: 700;
-      font-size: 1rem;
-      margin-top: 6px;
-      color: #ffd700;
-      user-select: text;
-    }
-    /* Stats */
+
     .stats {
       display: flex;
       justify-content: center;
@@ -248,18 +202,14 @@
       user-select: none;
       transition: background-color 0.3s ease;
     }
-    .stat:hover {
-      background-color: #1f3f70;
-      cursor: default;
-    }
     .stat span {
       display: block;
       font-size: 1.2rem;
       margin-top: 6px;
       color: #ddd;
       font-weight: 500;
-      user-select: text;
     }
+
     footer {
       width: 100%;
       text-align: center;
@@ -270,37 +220,11 @@
       border-top: 1px solid #23344a;
       margin-top: auto;
     }
-    @keyframes slideInLeft {
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
+
     @media (max-width: 700px) {
-      nav {
+      .values-lista {
         flex-direction: column;
-        gap: 15px;
-        padding: 20px;
-      }
-      main.content {
-        padding: 25px 20px 30px;
-        font-size: 1rem;
-      }
-      main.content h2 {
-        font-size: 2rem;
-      }
-      main.content p {
-        font-size: 1rem;
-      }
-      .timeline {
-        padding-left: 20px;
-      }
-      .values {
-        gap: 15px;
-      }
-      .values .card {
-        max-width: 100%;
-        flex: 1 1 100%;
+        align-items: center;
       }
       .stats {
         gap: 25px;
@@ -326,18 +250,11 @@
 
   <main class="content">
     <h2>Nossa História</h2>
-    <p>
-      A OMNITEAM nasceu da união de profissionais apaixonados por excelência, inovação e colaboração. Formada por especialistas de diversas áreas, nossa equipe se destaca por transformar desafios em soluções práticas, eficientes e impactantes.
-    </p>
-    <p>
-      Desde o início, nosso objetivo sempre foi o mesmo: entregar resultados com qualidade, agilidade e espírito de equipe. Cada integrante traz sua vivência, criatividade e energia, o que torna nossa jornada única e inspiradora.
-    </p>
-    <p>
-      Hoje, somos reconhecidos não apenas pelos resultados que entregamos, mas pela cultura forte que cultivamos. Na OMNITEAM, valorizamos o respeito, o aprendizado contínuo e o compromisso com a alta performance.
-    </p>
+    <p>A OMNITEAM nasceu da união de profissionais apaixonados por excelência, inovação e colaboração. Formada por especialistas de diversas áreas, nossa equipe se destaca por transformar desafios em soluções práticas, eficientes e impactantes.</p>
+    <p>Desde o início, nosso objetivo sempre foi o mesmo: entregar resultados com qualidade, agilidade e espírito de equipe. Cada integrante traz sua vivência, criatividade e energia, o que torna nossa jornada única e inspiradora.</p>
+    <p>Hoje, somos reconhecidos não apenas pelos resultados que entregamos, mas pela cultura forte que cultivamos. Na OMNITEAM, valorizamos o respeito, o aprendizado contínuo e o compromisso com a alta performance.</p>
 
-    <!-- Linha do tempo -->
-    <section class="timeline" aria-label="Linha do tempo da OMNITEAM">
+    <section class="timeline">
       <h3>Nossa Jornada</h3>
       <div class="event">
         <div class="date">2019</div>
@@ -353,41 +270,41 @@
       </div>
     </section>
 
-    <!-- Valores -->
-    <section class="values" aria-label="Valores da OMNITEAM">
+    <section class="values">
       <h3>Valores que nos movem</h3>
-      <div class="card" title="Inovação">Inovação</div>
-      <div class="card" title="Colaboração">Colaboração</div>
-      <div class="card" title="Excelência">Excelência</div>
-      <div class="card" title="Compromisso">Compromisso</div>
-    </section>
-
-    <!-- Depoimentos -->
-    <section class="testimonials" aria-label="Depoimentos inspiradores">
-      <h3>Depoimentos</h3>
-      <div class="testimonial">
-        “A OMNITEAM é um grupo que realmente transforma ideias em resultados concretos. Tenho orgulho de fazer parte dessa jornada.”
-        <div class="testimonial-author">— Bruno Sanches, Fundador</div>
+      <div class="values-lista">
+        <div class="card" onclick="mudarTexto('inovacao')">Inovação</div>
+        <div class="card" onclick="mudarTexto('colaboracao')">Colaboração</div>
+        <div class="card" onclick="mudarTexto('excelencia')">Excelência</div>
+        <div class="card" onclick="mudarTexto('compromisso')">Compromisso</div>
       </div>
-      <div class="testimonial">
-        “Trabalhar aqui é sinônimo de crescimento contínuo e de uma cultura que valoriza cada talento.”
-        <div class="testimonial-author">— Ana Bernacci, Analista</div>
+      <div class="value-description" id="descricao-valor">
+        Clique em um valor para saber mais sobre ele.
       </div>
     </section>
 
-    <!-- Estatísticas -->
-    <section class="stats" aria-label="Estatísticas da OMNITEAM">
-      <div class="stat" title="Clientes atendidos">150+<span>Clientes Atendidos</span></div>
-      <div class="stat" title="Projetos entregues">320+<span>Projetos Entregues</span></div>
-      <div class="stat" title="Anos de experiência">5+<span>Anos de Experiência</span></div>
-      <div class="stat" title="Colaboradores">20+<span>Colaboradores</span></div>
+    <section class="stats">
+      <div class="stat">150+<span>Clientes Atendidos</span></div>
+      <div class="stat">320+<span>Projetos Entregues</span></div>
+      <div class="stat">5+<span>Anos de Experiência</span></div>
+      <div class="stat">20+<span>Colaboradores</span></div>
     </section>
-
   </main>
 
   <footer>
     &copy; 2025 OMNITEAM. Todos os direitos reservados.
   </footer>
 
+  <script>
+    function mudarTexto(valor) {
+      const descricoes = {
+        inovacao: "Acreditamos no poder da inovação para transformar ideias em soluções únicas e eficazes.",
+        colaboracao: "Trabalhar em equipe é essencial. Valorizamos o apoio mútuo e o crescimento coletivo.",
+        excelencia: "Buscamos sempre entregar resultados com o mais alto padrão de qualidade.",
+        compromisso: "Temos dedicação total aos nossos clientes, projetos e à melhoria contínua."
+      };
+      document.getElementById("descricao-valor").innerText = descricoes[valor];
+    }
+  </script>
 </body>
 </html>
