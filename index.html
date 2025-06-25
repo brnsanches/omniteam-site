@@ -6,96 +6,307 @@
   <title>OMNITEAM - História</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+    }
     body {
       font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #0b1c2c;
+      background: linear-gradient(135deg, #0b1c2c 0%, #122c45 100%);
       color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      scroll-behavior: smooth;
+    }
+    header {
+      padding: 30px 0 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    header img {
+      max-width: 130px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #4a90e2aa;
+      transition: transform 0.3s ease;
+    }
+    header img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #ffd700cc;
+    }
+    h1 {
+      font-weight: 800;
+      font-size: 3rem;
+      color: #fff;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 5px #0008;
+    }
+    p.slogan {
+      font-size: 1.1rem;
+      color: #cfcfcfcc;
+      font-weight: 600;
+      font-style: italic;
+      letter-spacing: 0.1em;
+      user-select: none;
+    }
+    nav {
+      background-color: #18304f;
+      border-radius: 30px;
+      box-shadow: 0 4px 12px #0008;
+      margin: 25px 0 40px;
+      padding: 12px 40px;
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 1.15rem;
+      user-select: none;
+    }
+    nav a {
+      color: #d6d6d6;
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 25px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      box-shadow: inset 0 0 0 0 #ffd700;
+    }
+    nav a.active, nav a:hover {
+      color: #0b1c2c;
+      background-color: #ffd700;
+      box-shadow: inset 0 0 8px 4px #ffd700aa;
+    }
+    main.content {
+      max-width: 900px;
+      background: #182c3aee;
+      padding: 30px 40px 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      user-select: text;
+    }
+    main.content h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      color: #fff;
+      text-shadow: 1px 1px 6px #000a;
+    }
+    main.content p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #ccc;
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+    /* Timeline */
+    .timeline {
+      position: relative;
+      margin: 40px 0 60px;
+      padding-left: 40px;
+      border-left: 3px solid #ffd700;
+    }
+    .timeline h3 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #ffd700;
+      text-shadow: 1px 1px 4px #000a;
+    }
+    .event {
+      position: relative;
+      margin-bottom: 30px;
+      padding-left: 20px;
+      opacity: 0;
+      transform: translateX(-50px);
+      animation: slideInLeft 0.6s forwards;
+    }
+    .event:nth-child(odd) {
+      animation-delay: 0.1s;
+    }
+    .event:nth-child(even) {
+      animation-delay: 0.3s;
+    }
+    .event::before {
+      content: '';
+      position: absolute;
+      left: -27px;
+      top: 8px;
+      width: 16px;
+      height: 16px;
+      background: #ffd700;
+      border-radius: 50%;
+      border: 3px solid #0b1c2c;
+      box-shadow: 0 0 8px #ffd700aa;
+    }
+    .date {
+      font-weight: 700;
+      color: #ffd700;
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+      letter-spacing: 0.06em;
+      user-select: none;
+    }
+    /* Values Cards */
+    .values {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+    .values h3 {
+      width: 100%;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #ffd700;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 4px #000a;
       text-align: center;
     }
-
-    header {
-      background-color: #0b1c2c;
-      padding: 30px 0 10px;
-    }
-
-    header img {
-      max-width: 120px;
-      margin-bottom: 10px;
-    }
-
-    h1 {
+    .values .card {
+      background: #0f223b;
+      padding: 25px 35px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px #000c;
       font-weight: 700;
-      font-size: 2.5rem;
-      margin: 10px 0 0;
-      color: #ffffff;
+      font-size: 1.3rem;
+      color: #fff;
+      flex: 1 1 140px;
+      max-width: 180px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      user-select: none;
     }
-
-    nav {
-      background-color: #122c45;
+    .values .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px #ffd700cc;
+      color: #ffd700;
+    }
+    /* Testimonials */
+    .testimonials {
+      background: #0b1c2cdd;
+      border-radius: 20px;
+      padding: 40px 30px;
+      margin-bottom: 60px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .testimonials h3 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #ffd700;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 4px #000a;
+    }
+    .testimonial {
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #ddd;
+      margin-bottom: 20px;
+      position: relative;
+      padding-left: 30px;
+      user-select: none;
+    }
+    .testimonial::before {
+      content: "“";
+      position: absolute;
+      left: 0;
+      top: -10px;
+      font-size: 3rem;
+      color: #ffd700cc;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .testimonial-author {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-top: 6px;
+      color: #ffd700;
+      user-select: text;
+    }
+    /* Stats */
+    .stats {
       display: flex;
       justify-content: center;
-      padding: 12px 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      margin-bottom: 30px;
+      gap: 40px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
     }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: 600;
-      font-size: 1.05rem;
-      padding-bottom: 4px;
-      border-bottom: 3px solid transparent;
-      transition: all 0.3s ease;
-    }
-
-    nav a:hover, nav a.active {
+    .stat {
+      background: #122c45;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px #000c;
+      padding: 25px 30px;
+      min-width: 120px;
       color: #ffd700;
-      border-bottom-color: #ffd700;
-    }
-
-    .content {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px 60px;
-      text-align: left;
-    }
-
-    .content h2 {
+      font-weight: 700;
       font-size: 2rem;
-      margin-bottom: 20px;
-      color: #ffffff;
+      user-select: none;
+      transition: background-color 0.3s ease;
     }
-
-    .content p {
-      font-size: 1.15rem;
-      line-height: 1.8;
-      color: #cccccc;
-      margin-bottom: 20px;
+    .stat:hover {
+      background-color: #1f3f70;
+      cursor: default;
     }
-
+    .stat span {
+      display: block;
+      font-size: 1.2rem;
+      margin-top: 6px;
+      color: #ddd;
+      font-weight: 500;
+      user-select: text;
+    }
     footer {
-      background-color: #0b1c2c;
-      color: #aaa;
-      padding: 20px 0;
-      font-size: 0.9rem;
+      width: 100%;
       text-align: center;
+      padding: 20px 0;
+      color: #999;
+      font-size: 0.9rem;
+      user-select: none;
+      border-top: 1px solid #23344a;
+      margin-top: auto;
     }
-
+    @keyframes slideInLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
     @media (max-width: 700px) {
-      .content {
-        padding: 30px 15px;
+      nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
       }
-
-      .content h2 {
-        font-size: 1.6rem;
-      }
-
-      .content p {
+      main.content {
+        padding: 25px 20px 30px;
         font-size: 1rem;
+      }
+      main.content h2 {
+        font-size: 2rem;
+      }
+      main.content p {
+        font-size: 1rem;
+      }
+      .timeline {
+        padding-left: 20px;
+      }
+      .values {
+        gap: 15px;
+      }
+      .values .card {
+        max-width: 100%;
+        flex: 1 1 100%;
+      }
+      .stats {
+        gap: 25px;
+      }
+      .stat {
+        min-width: 140px;
       }
     }
   </style>
@@ -105,7 +316,7 @@
   <header>
     <img src="logo.jpg" alt="Logo da OMNITEAM" />
     <h1>OMNITEAM</h1>
-    <p style="color:#ccc; font-size: 1rem; margin-top: 5px;">SEU TIME DE ALTA PERFORMANCE</p>
+    <p class="slogan">SEU TIME DE ALTA PERFORMANCE</p>
   </header>
 
   <nav>
@@ -113,7 +324,7 @@
     <a href="equipe.html">Nosso Time</a>
   </nav>
 
-  <div class="content">
+  <main class="content">
     <h2>Nossa História</h2>
     <p>
       A OMNITEAM nasceu da união de profissionais apaixonados por excelência, inovação e colaboração. Formada por especialistas de diversas áreas, nossa equipe se destaca por transformar desafios em soluções práticas, eficientes e impactantes.
@@ -124,7 +335,55 @@
     <p>
       Hoje, somos reconhecidos não apenas pelos resultados que entregamos, mas pela cultura forte que cultivamos. Na OMNITEAM, valorizamos o respeito, o aprendizado contínuo e o compromisso com a alta performance.
     </p>
-  </div>
+
+    <!-- Linha do tempo -->
+    <section class="timeline" aria-label="Linha do tempo da OMNITEAM">
+      <h3>Nossa Jornada</h3>
+      <div class="event">
+        <div class="date">2019</div>
+        <p>Fundação da OMNITEAM com 5 profissionais apaixonados.</p>
+      </div>
+      <div class="event">
+        <div class="date">2021</div>
+        <p>Primeiro grande projeto entregue com sucesso, expandindo nossa atuação.</p>
+      </div>
+      <div class="event">
+        <div class="date">2024</div>
+        <p>Expansão para novos mercados e parcerias estratégicas internacionais.</p>
+      </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="values" aria-label="Valores da OMNITEAM">
+      <h3>Valores que nos movem</h3>
+      <div class="card" title="Inovação">Inovação</div>
+      <div class="card" title="Colaboração">Colaboração</div>
+      <div class="card" title="Excelência">Excelência</div>
+      <div class="card" title="Compromisso">Compromisso</div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="testimonials" aria-label="Depoimentos inspiradores">
+      <h3>Depoimentos</h3>
+      <div class="testimonial">
+        “A OMNITEAM é um grupo que realmente transforma ideias em resultados concretos. Tenho orgulho de fazer parte dessa jornada.”
+        <div class="testimonial-author">— Bruno Sanches, Fundador</div>
+      </div>
+      <div class="testimonial">
+        “Trabalhar aqui é sinônimo de crescimento contínuo e de uma cultura que valoriza cada talento.”
+        <div class="testimonial-author">— Ana Bernacci, Analista</div>
+      </div>
+    </section>
+
+    <!-- Estatísticas -->
+    <section class="stats" aria-label="Estatísticas da OMNITEAM">
+      <div class="stat" title="Clientes atendidos">150+<span>Clientes Atendidos</span></div>
+      <div class="stat" title="Projetos entregues">320+<span>Projetos Entregues</span></div>
+      <div class="stat" title="Anos de experiência">5+<span>Anos de Experiência</span></div>
+      <div class="stat" title="Colaboradores">20+<span>Colaboradores</span></div>
+    </section>
+
+  </main>
 
   <footer>
     &copy; 2025 OMNITEAM. Todos os direitos reservados.
