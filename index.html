@@ -20,7 +20,6 @@
       align-items: center;
       text-align: center;
       padding: 20px;
-      scroll-behavior: smooth;
     }
     header {
       padding: 30px 0 15px;
@@ -52,7 +51,6 @@
       font-weight: 600;
       font-style: italic;
       letter-spacing: 0.1em;
-      user-select: none;
     }
     nav {
       background-color: #18304f;
@@ -65,7 +63,6 @@
       justify-content: center;
       font-weight: 600;
       font-size: 1.15rem;
-      user-select: none;
     }
     nav a {
       color: #d6d6d6;
@@ -73,7 +70,6 @@
       padding: 8px 18px;
       border-radius: 25px;
       transition: background-color 0.3s ease, color 0.3s ease;
-      box-shadow: inset 0 0 0 0 #ffd700;
     }
     nav a.active, nav a:hover {
       color: #0b1c2c;
@@ -86,7 +82,6 @@
       padding: 30px 40px 40px;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      user-select: text;
     }
     main.content h2 {
       font-size: 2.8rem;
@@ -100,7 +95,6 @@
       line-height: 1.7;
       color: #ccc;
       margin-bottom: 20px;
-      letter-spacing: 0.02em;
     }
 
     .timeline {
@@ -115,7 +109,6 @@
       font-size: 2.4rem;
       font-weight: 700;
       color: #ffd700;
-      text-shadow: 1px 1px 4px #000a;
     }
     .event {
       position: relative;
@@ -167,7 +160,6 @@
       flex: 0 0 130px;
       transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
       cursor: pointer;
-      user-select: none;
       text-align: center;
     }
     .values-lista .card:hover {
@@ -199,8 +191,6 @@
       color: #ffd700;
       font-weight: 700;
       font-size: 2rem;
-      user-select: none;
-      transition: background-color 0.3s ease;
     }
     .stat span {
       display: block;
@@ -216,7 +206,6 @@
       padding: 20px 0;
       color: #999;
       font-size: 0.9rem;
-      user-select: none;
       border-top: 1px solid #23344a;
       margin-top: auto;
     }
@@ -254,6 +243,7 @@
     <p>Desde o início, nosso objetivo sempre foi o mesmo: entregar resultados com qualidade, agilidade e espírito de equipe. Cada integrante traz sua vivência, criatividade e energia, o que torna nossa jornada única e inspiradora.</p>
     <p>Hoje, somos reconhecidos não apenas pelos resultados que entregamos, mas pela cultura forte que cultivamos. Na OMNITEAM, valorizamos o respeito, o aprendizado contínuo e o compromisso com a alta performance.</p>
 
+    <!-- Timeline -->
     <section class="timeline">
       <h3>Nossa Jornada</h3>
       <div class="event">
@@ -270,19 +260,22 @@
       </div>
     </section>
 
+    <!-- Valores -->
     <section class="values">
       <h3>Valores que nos movem</h3>
       <div class="values-lista">
-        <div class="card" onclick="mudarTexto('inovacao')">Inovação</div>
         <div class="card" onclick="mudarTexto('colaboracao')">Colaboração</div>
+        <div class="card" onclick="mudarTexto('integridade')">Integridade e ética</div>
+        <div class="card" onclick="mudarTexto('respeito')">Respeito</div>
         <div class="card" onclick="mudarTexto('excelencia')">Excelência</div>
-        <div class="card" onclick="mudarTexto('compromisso')">Compromisso</div>
+        <div class="card" onclick="mudarTexto('adaptabilidade')">Adaptabilidade</div>
       </div>
       <div class="value-description" id="descricao-valor">
         Clique em um valor para saber mais sobre ele.
       </div>
     </section>
 
+    <!-- Estatísticas -->
     <section class="stats">
       <div class="stat">150+<span>Clientes Atendidos</span></div>
       <div class="stat">320+<span>Projetos Entregues</span></div>
@@ -298,13 +291,15 @@
   <script>
     function mudarTexto(valor) {
       const descricoes = {
-        inovacao: "Acreditamos no poder da inovação para transformar ideias em soluções únicas e eficazes.",
-        colaboracao: "Trabalhar em equipe é essencial. Valorizamos o apoio mútuo e o crescimento coletivo.",
-        excelencia: "Buscamos sempre entregar resultados com o mais alto padrão de qualidade.",
-        compromisso: "Temos dedicação total aos nossos clientes, projetos e à melhoria contínua."
+        colaboracao: "Valorizamos o trabalho em equipe, onde diferentes talentos se complementam para alcançar objetivos comuns.",
+        integridade: "Atuamos com honestidade, respeito e responsabilidade em todas as nossas relações e decisões.",
+        respeito: "Respeitamos as pessoas e o meio ambiente, promovendo relações saudáveis e sustentáveis.",
+        excelencia: "Comprometemo-nos com a qualidade em tudo o que fazemos, superando expectativas e entregando valor real.",
+        adaptabilidade: "Enfrentamos mudanças com resiliência, flexibilidade e visão estratégica para responder aos desafios com eficiência."
       };
       document.getElementById("descricao-valor").innerText = descricoes[valor];
     }
   </script>
+
 </body>
 </html>
