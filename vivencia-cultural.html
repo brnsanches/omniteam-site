@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OMNITEAM - Vivência Cultural</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #0b1c2c 0%, #122c45 100%);
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+    header {
+      padding: 30px 0 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    header img {
+      max-width: 130px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #4a90e2aa;
+      transition: transform 0.3s ease;
+    }
+    header img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #ffd700cc;
+    }
+    h1 {
+      font-weight: 800;
+      font-size: 3rem;
+      color: #fff;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 5px #0008;
+    }
+    p.slogan {
+      font-size: 1.1rem;
+      color: #cfcfcfcc;
+      font-weight: 600;
+      font-style: italic;
+      letter-spacing: 0.1em;
+    }
+    nav {
+      background-color: #18304f;
+      border-radius: 30px;
+      box-shadow: 0 4px 12px #0008;
+      margin: 25px 0 40px;
+      padding: 12px 40px;
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 1.15rem;
+    }
+    nav a {
+      color: #d6d6d6;
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 25px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    nav a.active, nav a:hover {
+      color: #0b1c2c;
+      background-color: #ffd700;
+      box-shadow: inset 0 0 8px 4px #ffd700aa;
+    }
+    main.content {
+      max-width: 850px;
+      background: #182c3aee;
+      padding: 40px 50px 50px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      text-align: left;
+      color: #ccc;
+      line-height: 1.65;
+    }
+    main.content h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #ffd700;
+      text-shadow: 1px 1px 6px #000a;
+      text-align: center;
+    }
+    main.content h3 {
+      font-size: 1.8rem;
+      color: #ffd700;
+      margin-bottom: 20px;
+      margin-top: 35px;
+      text-shadow: 1px 1px 5px #0007;
+    }
+    details {
+      background: #0f223b;
+      padding: 18px 22px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px #000c;
+      margin-bottom: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    details[open] {
+      background-color: #18304f;
+      box-shadow: 0 10px 25px #ffd700aa;
+    }
+    details summary {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ffd700;
+      list-style: none;
+      outline: none;
+    }
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+    details summary:after {
+      content: "▼";
+      float: right;
+      transition: transform 0.3s ease;
+    }
+    details[open] summary:after {
+      transform: rotate(-180deg);
+    }
+    details p {
+      margin-top: 12px;
+      font-size: 1.1rem;
+      color: #ddd;
+      line-height: 1.6;
+    }
+    footer {
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+      color: #999;
+      font-size: 0.9rem;
+      border-top: 1px solid #23344a;
+      margin-top: auto;
+    }
+    @media (max-width: 700px) {
+      main.content {
+        padding: 30px 25px 40px;
+      }
+      main.content h2 {
+        font-size: 2.2rem;
+      }
+      main.content h3 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.jpg" alt="Logo da OMNITEAM" />
+    <h1>OMNITEAM</h1>
+    <p class="slogan">CONECTANDO PESSOAS E GERANDO SOLUÇÕES</p>
+  </header>
+
+  <nav>
+    <a href="index.html">História</a>
+    <a href="equipe.html">Nosso Time</a>
+    <a href="vivencia-cultural.html" class="active">Vivência Cultural</a>
+  </nav>
+
+  <main class="content">
+    <h2>Adaptação Cultural em um Ambiente Corporativo Global</h2>
+
+
+    <details open>
+      <summary>Contexto e responsabilidade</summary>
+      <p>Um dos integrantes da equipe teve a oportunidade de vivenciar na prática os desafios e aprendizados de um ambiente corporativo verdadeiramente multicultural durante sua atuação na Danone. Sua principal responsabilidade era atuar como ponto de contato entre o Brasil e os times globais, coordenando o compartilhamento do volume de produção das fábricas localizadas fora do país. Essa função exigia interação constante com equipes de diferentes nacionalidades, incluindo indianos, chineses, franceses, italianos e australianos.</p>
+    </details>
+
+    <details>
+      <summary>Diferenças culturais e estilos de comunicação</summary>
+      <p>Logo nos primeiros meses, percebeu que as diferenças culturais iam muito além do idioma. Cada cultura trazia consigo um estilo próprio de comunicação, gestão do tempo, resolução de problemas e tomada de decisão. Por exemplo, ao lidar com colegas indianos, aprendeu que a comunicação tende a ser mais indireta e polida, exigindo atenção redobrada para captar mensagens sutis e evitar interpretações equivocadas. Por outro lado, os franceses e italianos costumavam ser mais diretos, valorizando discussões abertas e, muitas vezes, debates mais acalorados, o que inicialmente causou certo desconforto, mas com o tempo passou a enxergar como uma forma legítima de expressar opiniões.</p>
+    </details>
+
+    <details>
+      <summary>Abordagens específicas por cultura</summary>
+      <p>Os australianos traziam uma abordagem mais informal, com foco em equilíbrio entre trabalho e vida pessoal, o que exigia ajustar expectativas quanto a prazos e horários de reuniões. Já com os chineses, a hierarquia era muito presente nas interações, e entender quem deveria ser envolvido nas decisões foi essencial para manter o fluxo de trabalho produtivo e respeitoso.</p>
+    </details>
+
+    <details>
+      <summary>Adaptação e aprendizado</summary>
+      <p>Para se adaptar, foi necessário desenvolver uma escuta mais atenta, empatia e flexibilidade. Ajustou seu estilo de comunicação dependendo do público, compreendendo as diferentes percepções sobre pontualidade, assertividade e até mesmo o conceito de urgência. Descobriu que o sucesso em um ambiente global não depende apenas de competência técnica, mas também da capacidade de se adaptar ao outro, construir confiança e criar pontes entre diferentes formas de pensar e trabalhar.</p>
+    </details>
+
+    <details>
+      <summary>Impacto pessoal e profissional</summary>
+      <p>Essa experiência foi extremamente enriquecedora e transformadora, tanto no âmbito profissional quanto pessoal. Ele aprendeu a valorizar a diversidade cultural não como um obstáculo, mas como uma fonte de aprendizado e inovação. Trabalhar em um contexto global ampliou sua visão de mundo e o preparou para atuar com mais sensibilidade, respeito e eficácia em ambientes multiculturais.</p>
+    </details>
+
+  </main>
+
+  <footer>
+    &copy; 2025 OMNITEAM. Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
