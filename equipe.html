@@ -33,29 +33,34 @@
     }
 
     nav {
-      background-color: #122c45;
-      display: flex;
-      justify-content: center;
-      padding: 12px 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      margin-bottom: 30px;
-    }
+  background-color: #18304f;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px #0008;
+  margin: 25px auto 40px;
+  padding: 12px 40px;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.15rem;
+  max-width: fit-content;
+}
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: 600;
-      font-size: 1.05rem;
-      padding-bottom: 4px;
-      border-bottom: 3px solid transparent;
-      transition: all 0.3s ease;
-    }
+nav a {
+  color: #d6d6d6;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-    nav a:hover, nav a.active {
-      color: #ffd700;
-      border-bottom-color: #ffd700;
-    }
+nav a.active,
+nav a:hover {
+  color: #0b1c2c;
+  background-color: #ffd700;
+  box-shadow: inset 0 0 8px 4px #ffd700aa;
+}
+
 
     #destaque {
       padding: 40px 20px 20px;
@@ -154,10 +159,11 @@
     <p style="color:#ccc; font-size: 1rem; margin-top: 5px;">CONECTANDO PESSOAS E GERANDO SOLUÇÕES</p>
   </header>
 
-  <nav>
-    <a href="index.html">História</a>
-    <a href="equipe.html" class="active">Nosso Time</a>
-  </nav>
+<nav>
+  <a href="index.html">História</a>
+  <a href="equipe.html" class="active">Nosso Time</a>
+  <a href="vivencia-cultural.html">Vivência Cultural</a>
+</nav>
 
   <section id="destaque">
     <h2>Nosso Time</h2>
@@ -180,8 +186,8 @@
         <div class="card">
           <img src="lorena.jpg" alt="Foto da Lorena" />
           <h2>Lorena de Sousa</h2>
-          <p>Analista de Marketing</p>
-          <p>Fã de design e café ☕️</p>
+          <p>Gerente jurídico</p>
+          <p>Fã de livros e café ☕️</p>
         </div>
       </a>
 
@@ -189,8 +195,8 @@
         <div class="card">
           <img src="ana.jpg" alt="Foto da Ana Bernacci" />
           <h2>Ana Bernacci</h2>
-          <p>Desenvolvedora Front-end</p>
-          <p>Geek e gamer 🎮</p>
+          <p>Planejadora logística</p>
+          <p>Fã de números e planejamento 📊</p>
         </div>
       </a>
     </div>
@@ -201,8 +207,8 @@
         <div class="card">
           <img src="andre.jpg" alt="Foto do André" />
           <h2>André Tavares</h2>
-          <p>Gerente de Projetos</p>
-          <p>Organização é tudo ✔️</p>
+          <p>Diretor técnico</p>
+          <p>Viciado em Pós-Graduação ✔️</p>
         </div>
       </a>
 
@@ -210,7 +216,7 @@
         <div class="card">
           <img src="lucas.jpg" alt="Foto do Lucas" />
           <h2>Lucas Fracasso</h2>
-          <p>Especialista em UX</p>
+          <p>Psicólogo</p>
           <p>Viciado em café e inovação ☕💡</p>
         </div>
       </a>
